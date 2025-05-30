@@ -1,0 +1,286 @@
+<div class="layout">
+  <h4 class="nav">Авто по подписке >  Новые </h4>
+
+  <div class="select-row">
+    <div class="floating-select">
+      <select id="floatingSelect1">
+        <option value="" selected disabled></option>
+        <option value="1">Не указано</option>
+        <option value="2">Да</option>
+      </select>
+      <label>Авто по подписке</label>
+    </div>
+
+    <div class="floating-select">
+      <select id="floatingSelect2">
+        <option value="" selected disabled></option>
+        <option value="1">Не указано</option>
+        <option value="2">Новые</option>
+        <option value="3">С пробегом</option>
+      </select>
+      <label>Состояние</label>
+    </div>
+
+    <div class="floating-select">
+      <select id="floatingSelect3">
+        <option value="" selected disabled></option>
+        <option value="1">Не указано</option>
+        <option value="2">Сhery</option>
+        <option value="3">Сhangan</option>
+        <option value="3">Faw</option>
+      </select>
+      <label>Модель</label>
+    </div>
+
+    <div class="floating-select">
+      <select id="floatingSelect4">
+        <option value="" selected disabled></option>
+        <option value="1">Не указано</option>
+        <option value="2">Arrizo 8</option>
+        <option value="2">Tiggo 4 Pro</option>
+        <option value="2">Tiggo 7 Pro</option>
+      </select>
+      <label>Марка</label>
+    </div>
+  </div>
+
+  <div class="border-card">
+    <div class="floating-input">
+      <input type="text" id="textInput1" required>
+      <label for="textInput1">Заголовок</label>
+    </div>
+
+    <div class="floating-textarea">
+      <textarea id="multiLineInput" rows="6" required></textarea>
+      <label for="multiLineInput">Описание</label>
+    </div>
+
+    <div class="actions">
+      <button class="secondary-button">Очистить</button>
+      <button class="primary-button">Сохранить</button>
+    </div>
+  </div>
+
+  <div class="border-card">
+    <h3 class="card-title">Как купить автомобиль в ВТБ Авто?</h3>
+    <p class="card-description">Приобрести автомобиль в ВТБ Авто можно несколькими способами:</p>
+    <ul class="method-list">
+      <li class="method-item">Оформив покупку онлайн на сайте компании.</li>
+      <li class="method-item">Обратившись в контактный центр по телефону.</li>
+    </ul>
+    <div class="actions">
+      <button class="secondary-button">Изменить</button>
+      <button class="primary-button delete-button">Удалить</button>
+    </div>
+  </div>
+
+  <div class="border-card">
+    <h3 class="card-title">Какие автомобили представлены в каталоге ВТБ Авто?</h3>
+    <p class="card-description">В каталоге ВТБ Авто представлен широкий выбор новых автомобилей различных марок и моделей, а также автомобили с пробегом. Вы можете найти автомобили как отечественного, так и зарубежного производства.</p>
+    <div class="actions">
+      <button class="secondary-button">Изменить</button>
+      <button class="primary-button delete-button">Удалить</button>
+    </div>
+  </div>
+</div>
+
+<style>
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav {
+  margin: 0;
+  padding: 0 0 20px 0;
+  width: 100%;
+}
+
+.select-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.floating-select {
+  position: relative;
+  flex: 1;
+  min-width: 0;/
+}
+
+.floating-select select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.floating-select label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.floating-select select:focus ~ label,
+.floating-select select.filled ~ label {
+  transform: translateY(-20px) scale(0.8);
+  background-color: white;
+  padding: 0 5px;
+}
+
+.border-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 40px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.card-title {
+  margin-top: 0;
+  color: #333;
+}
+
+.card-description {
+  margin-bottom: 0;
+  color: #666;
+}
+
+.floating-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.floating-input input:focus + label,
+.floating-input input:valid + label {
+  transform: translateY(-20px) scale(0.8);
+}
+
+.floating-input input:focus {
+  outline: none;
+}
+
+.floating-textarea {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.floating-textarea textarea {
+  width: 100%;
+  padding: 15px 10px 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.floating-textarea label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.floating-textarea textarea:focus + label,
+.floating-textarea textarea:valid + label {
+  transform: translateY(-20px) scale(0.8);
+}
+
+.floating-textarea textarea:focus {
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.primary-button {
+  background-color: rgb(78, 128, 215);
+  border: 1px solid;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+}
+
+.primary-button:hover {
+  background-color: rgb(51, 51, 209);
+}
+
+.secondary-button {
+  background-color: white;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.delete-button {
+  background-color: #ff4444;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.delete-button:active {
+  background-color: #ff7777;
+}
+</style>
+
+<script>
+document.querySelectorAll('.floating-select select').forEach(select => {
+  select.addEventListener('change', function() {
+    if (this.value !== '') {
+      this.classList.add('filled');
+    } else {
+      this.classList.remove('filled');
+    }
+  });
+});
+</script>
