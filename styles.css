@@ -1,0 +1,214 @@
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-container {
+  display: flex;           
+  justify-content: space-between;  
+  align-items: center;   
+  gap: 20px;                       
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.button-act {
+  background-color: rgb(78, 128, 215);
+  border: 1px solid;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+}
+
+.button-act:hover {
+  background-color: rgb(51, 51, 209);
+}
+
+.select-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.floating-select {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.floating-select select {
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg fill='%23555' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") 
+    no-repeat calc(100% - 10px) center;
+}
+
+.floating-select label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  padding-left: 10px;
+}
+
+.floating-select select:focus ~ label,
+.floating-select select.filled ~ label {
+  transform: translateY(-20px) scale(0.8);
+  background-color: white;
+  padding: 0 5px;
+}
+
+.drag-and-drop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #8b8989;
+}
+
+
+.border-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 40px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.card-title {
+  margin-top: 0;
+  color: #333;
+}
+
+.card-description {
+  margin-bottom: 0;
+  color: #666;
+}
+
+.floating-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.floating-input input:focus + label,
+.floating-input input:valid + label {
+  transform: translateY(-20px) scale(0.8);
+}
+
+.floating-input input:focus {
+  outline: none;
+}
+
+.floating-textarea {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+.floating-textarea label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.floating-textarea textarea:focus + label,
+.floating-textarea textarea:valid + label {
+  transform: translateY(-20px) scale(0.8);
+}
+
+.floating-textarea textarea:focus {
+  outline: none;
+}
+
+.actions-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.delete-button {
+  background-color: #ff4444;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.delete-button:active {
+  background-color: #ff7777;
+}
+
+.floating-input input,
+.floating-textarea textarea {
+  font-family: inherit; 
+  font-size: 16px;    
+  font-weight: normal; 
+  line-height: 1.5;    
+  color: #333;        
+  letter-spacing: normal; 
+  
+  width: 100%;
+  padding: 10px;       
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.floating-textarea textarea {
+  margin: 0;           /* Убираем стандартные отступы */
+  padding-top: 10px !important; /* Фиксируем отступ сверху */
+  white-space: pre-wrap; /* Сохраняет пробелы и переносы */
+  word-wrap: break-word; /* Перенос длинных слов */
+}
+
