@@ -8,30 +8,45 @@
     <div class="layout">
 
       <div class="header-container">
-        <div class="nav">Дефолтный FAQ</div>
+        <div class="nav">Для всех автомобилей</div>
         <div class="actions">
           <button id="addButton" class="button-act">Добавить</button>
-          <button class="button-act">Сохранить</button>
+          <button class="button-act">Сохранить изменения</button>
         </div>
       </div>
+
+
+      <div class="checkbox-container" style="
+          display: flex;
+          justify-content: flex-end; 
+          align-items: center;
+          width: 100%; 
+          margin-bottom: 20px;
+      ">
+        <input type="checkbox" id="noIndexCheckbox">
+        <label for="noIndexCheckbox" style="margin-left: 5px; cursor: pointer;">
+          Группа фильтров не подлежит индексации
+        </label>
+      </div>
+
     
       <div class="select-row">
         <div class="floating-select">
           <select id="floatingSelect1">
             <option value="" selected disabled></option>
             <option value="0">Не указано</option>
-            <option value="1">Да</option>
-            <option value="2">Нет</option>
+            <option value="1">Покупка</option>
+            <option value="2">По подписке</option>
           </select>
-          <label>Авто по подписке</label>
+          <label>Продукт</label>
         </div>
     
         <div class="floating-select">
           <select id="floatingSelect2">
             <option value="" selected disabled></option>
-            <option value="1">Не указано</option>
-            <option value="2">Новые</option>
-            <option value="3">С пробегом</option>
+            <option value="0">Не указано</option>
+            <option value="1">Новые</option>
+            <option value="2">С пробегом</option>
           </select>
           <label>Состояние</label>
         </div>
@@ -65,15 +80,17 @@
             <input type="text" id="textInput1" required>
             <label for="textInput1">Заголовок</label>
           </div>
-      
+
           <div class="floating-textarea">
             <textarea id="multiLineInput" rows="6" required></textarea>
             <label for="multiLineInput">Описание</label>
           </div>
-      
+
           <div class="actions-right">
+            <button id="saveButton" class="button-act">Сохранить</button>
             <button id="closeButton" class="button-act">Отменить</button>
           </div>
+
         </div>
       </div>
 
@@ -87,7 +104,7 @@
           <textarea id="multiLineInput2" rows="6" required></textarea>
           <label for="multiLineInput2">Описание</label>
         </div>
-    
+              
         <div class="actions-right">
           <div class="drag-and-drop">Перетяните карточку для измнения порядка отображения в блоке FAQ</div>
           <button class="button-act delete-button">Удалить</button>

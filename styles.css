@@ -23,7 +23,7 @@
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  width: 150px;
+  width: 200px;
   height: 30px;
 }
 
@@ -212,3 +212,14 @@
   word-wrap: break-word; /* Перенос длинных слов */
 }
 
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.checkbox-container {
+  display: flex;
+  width: 280px;
+}

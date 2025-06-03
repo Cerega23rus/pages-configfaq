@@ -76,34 +76,55 @@ selects.forEach(select => {
 function updateNav() {
     const subscriptionSelect = document.getElementById('floatingSelect1'); // Авто по подписке
     const stateSelect = document.getElementById('floatingSelect2'); // Состояние
-    const modelSelect = document.getElementById('floatingSelect3'); // Модель
-    const brandSelect = document.getElementById('floatingSelect4'); // Марка
-
-    let subscriptionText = "";
-    if (subscriptionSelect.value === "1") { // Если "Да"
-        subscriptionText = "Авто по подписке";
-    } else if (subscriptionSelect.value === "2") { // Если "Нет"
-        subscriptionText = "Авто без подписки";
-    } else {
-        subscriptionText = ""; // Если не указано
-    }
-
-    let stateText = "";
-    if (stateSelect.value === "2") {
-        stateText = "Все новые";
-    } else if (stateSelect.value === "3") {
-        stateText = "Все с пробегом";
-    }
-
-    let modelText = modelSelect.value ? modelSelect.options[modelSelect.selectedIndex].text : "";
+    const brandSelect = document.getElementById('floatingSelect3'); // Марка
+    const modelSelect = document.getElementById('floatingSelect4'); // Модель
+   
+    let text = "";
     let brandText = brandSelect.value ? brandSelect.options[brandSelect.selectedIndex].text : "";
+    let modelText = modelSelect.value ? modelSelect.options[modelSelect.selectedIndex].text : "";
 
-    // Формируем финальный текст
-    const finalText = [subscriptionText, stateText, modelText, brandText]
-        .filter(text => text) // Убираем пустые строки
-        .join(' > ');
 
-    nav.textContent = finalText || "Дефолтный FAQ"; // Если пусто, показываем "Дефолтный FAQ"
+    if (subscriptionSelect.value === "" || subscriptionSelect.value === "0") {
+        if (stateSelect.value === "1") {
+            text = "Для новых автомобилей";
+        } else if (stateSelect.value === "2") {
+            text = "Для автомобилей c пробегом";
+        } else {
+            text = "Для всех автомобилей";
+        }
+    } else if (subscriptionSelect.value === "1") {
+        if (stateSelect.value === "1") {
+            text = "Для новых автомобилей по продукту покупка";
+        } else if (stateSelect.value === "2") {
+            text = "Для автомобилей c пробегом по продукту покупка";
+        } else {
+            text = "Для всех автомобилей по продукту покупка";
+        }
+    } else if (subscriptionSelect.value === "2") {
+        if (stateSelect.value === "1") {
+            text = "Для новых автомобилей по продукту подписка";
+        } else if (stateSelect.value === "2") {
+            text = "Для автомобилей c пробегом по продукту подписка";
+        } else {
+            text = "Для всех автомобилей по продукту подписка";
+        }
+    } else {
+        text = "";
+    }
+
+    if (brandText == "Не указано") {
+        brandText = "";
+    }
+
+    if (modelText == "Не указано") {
+        modelText = "";
+    }
+
+    const finalText = [text, brandText, modelText]
+        .filter(text => text)
+        .join(' ');
+
+    nav.textContent = finalText
 }
 
 
